@@ -26,11 +26,11 @@ REST API приложения представлен ниже
     curl http://localhost:5557/api/orders
 ### Ответ
     HTTP/1.1 200 
-Content-Type: application/json
-Transfer-Encoding: chunked
-Date: Sat, 12 Nov 2021 17:01:19 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Date: Sat, 12 Nov 2021 17:01:19 GMT
 
-[{"id":1,"username":"Customer0","driverUsername":null,"status":"CREATED","information":"Information0"},{"id":2,"username":"Customer1","driverUsername":null,"status":"CREATED","information":"Information1"},{"id":3,"username":"Customer2","driverUsername":null,"status":"CREATED","information":"Information2"},{"id":4,"username":"Customer3","driverUsername":null,"status":"CREATED","information":"Information3"},{"id":5,"username":"Customer4","driverUsername":null,"status":"CREATED","information":"Information4"},{"id":6,"username":"Customer5","driverUsername":null,"status":"CREATED","information":"Information5"},{"id":7,"username":"Customer6","driverUsername":null,"status":"CREATED","information":"Information6"},{"id":8,"username":"Customer7","driverUsername":null,"status":"CREATED","information":"Information7"},{"id":9,"username":"Customer8","driverUsername":null,"status":"CREATED","information":"Information8"},{"id":10,"username":"Customer9","driverUsername":null,"status":"CREATED","information":"Information9"}}]%
+    [{"id":1,"username":"Customer0","driverUsername":null,"status":"CREATED","information":"Information0"},{"id":2,"username":"Customer1","driverUsername":null,"status":"CREATED","information":"Information1"},{"id":3,"username":"Customer2","driverUsername":null,"status":"CREATED","information":"Information2"},{"id":4,"username":"Customer3","driverUsername":null,"status":"CREATED","information":"Information3"},{"id":5,"username":"Customer4","driverUsername":null,"status":"CREATED","information":"Information4"},{"id":6,"username":"Customer5","driverUsername":null,"status":"CREATED","information":"Information5"},{"id":7,"username":"Customer6","driverUsername":null,"status":"CREATED","information":"Information6"},{"id":8,"username":"Customer7","driverUsername":null,"status":"CREATED","information":"Information7"},{"id":9,"username":"Customer8","driverUsername":null,"status":"CREATED","information":"Information8"},{"id":10,"username":"Customer9","driverUsername":null,"status":"CREATED","information":"Information9"}}]%
 ## Обновление заказа
 ### Запрос
 `PUT /api/orders`
