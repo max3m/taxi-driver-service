@@ -1,0 +1,66 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-initDB.yaml
+  - changeSet:
+      id: 1
+      author: postgres
+      changes:
+        - createTable:
+            tableName: drivers
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: username
+                  type: varchar(50)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar(50)
+                  constraints:
+                    unique: true
+                    nullable: false
+  - changeSet:
+      id: 2
+      author: postgres
+      comment: "Data init"
+      changes:
+        - insert:
+            tableName: drivers
+            columns:
+              - column:
+                  name: username
+                  value: "Driver1"
+              - column:
+                  name: email
+                  value: "driver1@server.com"
+        - insert:
+            tableName: drivers
+            columns:
+              - column:
+                  name: username
+                  value: "Driver2"
+              - column:
+                  name: email
+                  value: "driver2@server.com"
+        - insert:
+            tableName: drivers
+            columns:
+              - column:
+                  name: username
+                  value: "Driver3"
+              - column:
+                  name: email
+                  value: "driver3@server.com"
+
+      rollback:
+        - delete:
+            tableName: drivers
+            where: username in ('Driver1', 'Driver2', 'Driver3')
+
