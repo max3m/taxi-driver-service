@@ -1,6 +1,6 @@
 package com.epam.training.microservices.taxidriverservice.service;
 
-import com.epam.training.microservices.taxidriverservice.model.OrderDTO;
+import com.epam.training.microservices.taxidriverservice.model.Order;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,9 +13,9 @@ import java.util.List;
 public interface OrderClient {
 
     @GetMapping("/api/orders")
-    List<OrderDTO> getUnassignedOrders();
+    List<Order> getUnassignedOrders();
 
-    @PutMapping("/api/orders/{id}")
-    OrderDTO sendOrderUpdateRequest(@PathVariable("id") Long id, @RequestBody OrderDTO order);
+    @PutMapping("/api/orders/{chainId}")
+    Order sendOrderUpdateRequest(@PathVariable("chainId") Long chainId, @RequestBody Order order);
 }
 

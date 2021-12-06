@@ -1,8 +1,8 @@
 package com.epam.training.microservices.taxidriverservice.service;
 
-import com.epam.training.microservices.taxidriverservice.model.OrderDTO;
+import com.epam.training.microservices.taxidriverservice.model.Order;
 
 public interface DriverService {
     boolean checkIfDriverExists(String username);
-    OrderDTO updateOrder(Long id, OrderDTO orderDTO);
+    Order updateOrder(Long chainId, Order order);
 }

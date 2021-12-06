@@ -1,6 +1,6 @@
 package com.epam.training.microservices.taxidriverservice.controller;
 
-import com.epam.training.microservices.taxidriverservice.model.OrderDTO;
+import com.epam.training.microservices.taxidriverservice.model.Order;
 import com.epam.training.microservices.taxidriverservice.service.DriverService;
 import com.epam.training.microservices.taxidriverservice.service.OrderClient;
 import lombok.AllArgsConstructor;
@@ -18,13 +18,13 @@ public class DriverController {
 
     @GetMapping("/orders")
     @ResponseStatus(HttpStatus.OK)
-    public List<OrderDTO> getListOfUnassignedOrders() {
+    public List<Order> getListOfUnassignedOrders() {
         return orderClient.getUnassignedOrders();
     }
 
-    @PutMapping("/orders/{id}")
+    @PutMapping("/orders/{chainId}")
     @ResponseStatus(HttpStatus.CREATED)
-    public OrderDTO sendOrderUpdateRequest(@PathVariable("id") Long id, @RequestBody OrderDTO orderDTO){
-        return driverService.updateOrder(id, orderDTO);
+    public Order sendOrderUpdateRequest(@PathVariable("chainId") Long chainId, @RequestBody Order order){
+        return driverService.updateOrder(chainId, order);
     }
 }
